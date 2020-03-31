@@ -21,14 +21,6 @@ const IngredientForm = React.memo(props => {
             <input
               type="text"
               id="title"
-              // value={inputState.title}
-              // onChange={event => {
-              //   const newTitle = event.target.value;
-              //   setInputState(prevInputState => ({
-              //     ...prevInputState,
-              //     title: newTitle
-              //   }));
-              // }}
               value={enteredTitle}
               onChange={event => {
                 setEnteredTitle(event.target.value);

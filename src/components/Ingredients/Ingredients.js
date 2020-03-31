@@ -60,11 +60,6 @@ const Ingredients = () => {
       dispatchHttp({ type: 'RES' });
 
       const resJson = await res.json();
-
-      //   setIngredients(prevIngredients => [
-      //   ...prevIngredients,
-      //   { id: resJson.name, ...ingredient }
-      // ]);
       dispatch({
         type: 'ADD',
         ingredient: { id: resJson.name, ...ingredient }
@@ -86,8 +81,6 @@ const Ingredients = () => {
         }
       );
       dispatchHttp({ type: 'RES' });
-
-      // setIngredient(prevIng => prevIng.filter(x => x.id !== id));
       dispatch({ type: 'DELETE', id });
     } catch (err) {
       dispatchHttp({ type: 'ERROR', error: true });
@@ -110,7 +103,6 @@ const Ingredients = () => {
           ingredients={ingredients}
           onRemoveItem={removeIngredientHandler}
         />
-        {/* Need to add list here! */}
         {httpState.error && (
           <ErrorModal onClose={onClose}>{httpState.error}</ErrorModal>
         )}
